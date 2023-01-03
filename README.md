@@ -22,3 +22,51 @@ This project contains three services:
 - gRPC
 - PostgreSQL
 - Protobuf
+
+# Project structure
+
+```code
+.
+├── cmd
+│   └── main.go
+├── config.json
+├── go.mod
+├── go.sum
+├── internal
+│   ├── app
+│   │   └── app.go
+│   ├── config
+│   │   └── config.go
+│   ├── delivery
+│   │   ├── grpc
+│   │   │   ├── handler.go
+│   │   │   └── mapper
+│   │   │       ├── post.go
+│   │   │       └── update.go
+│   │   └── http
+│   │       ├── error.go
+│   │       └── handler.go
+│   ├── models
+│   │   ├── context.go
+│   │   └── post.go
+│   ├── repository
+│   │   ├── post.go
+│   │   ├── postgres.go
+│   │   └── repository.go
+│   └── service
+│       ├── post.go
+│       └── service.go
+├── Makefile
+├── migrations
+│   ├── down.sql
+│   └── up.sql
+├── pkg
+│   └── post_crud
+│       ├── post_grpc.pb.go
+│       └── post.pb.go
+├── proto
+│   └── post.proto
+└── README.md
+
+15 directories, 25 files
+```
