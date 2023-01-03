@@ -1,0 +1,20 @@
+{
+    "http": {
+        "port": "8083",
+        "read": 30,
+        "write": 30
+    },
+    "grpc": {
+        "host": "localhost",
+        "port": "8084",
+        "type": "tcp"
+    },
+    "database": {
+        "host": "localhost",
+        "port": "5432",
+        "username": "postgres",
+        "password": "12345",
+        "name": "postgres",
+        "ssl_mode": "disable"
+    }
+}
