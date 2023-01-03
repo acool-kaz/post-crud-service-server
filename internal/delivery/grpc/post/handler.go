@@ -1,10 +1,10 @@
-package grpc
+package post
 
 import (
 	"context"
 	"log"
 
-	"github.com/acool-kaz/post-crud-service-server/internal/delivery/grpc/mapper"
+	"github.com/acool-kaz/post-crud-service-server/internal/delivery/grpc/post/mapper"
 	"github.com/acool-kaz/post-crud-service-server/internal/models"
 	"github.com/acool-kaz/post-crud-service-server/internal/service"
 	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud"

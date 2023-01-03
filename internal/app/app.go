@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/acool-kaz/post-crud-service-server/internal/config"
-	grpcPostCRUDHandler "github.com/acool-kaz/post-crud-service-server/internal/delivery/grpc"
+	grpcPostCRUDHandler "github.com/acool-kaz/post-crud-service-server/internal/delivery/grpc/post"
 	httpHandler "github.com/acool-kaz/post-crud-service-server/internal/delivery/http"
 	"github.com/acool-kaz/post-crud-service-server/internal/repository"
 	"github.com/acool-kaz/post-crud-service-server/internal/service"
