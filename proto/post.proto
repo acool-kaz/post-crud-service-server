@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpc.post_crud;
 
-option go_package = "pkg/post_crud;post_crud_pb";
+option go_package = "pkg/post_crud/pb;post_crud_pb";
 
 service PostCRUDService {
     rpc Create(CreateRequest) returns (CreateResponse);

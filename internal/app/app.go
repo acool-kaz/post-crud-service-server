@@ -17,7 +17,7 @@ import (
 	httpHandler "github.com/acool-kaz/post-crud-service-server/internal/delivery/http"
 	"github.com/acool-kaz/post-crud-service-server/internal/repository"
 	"github.com/acool-kaz/post-crud-service-server/internal/service"
-	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud"
+	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud/pb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

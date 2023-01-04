@@ -2,7 +2,7 @@ package mapper
 
 import (
 	"github.com/acool-kaz/post-crud-service-server/internal/models"
-	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud"
+	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud/pb"
 )
 
 func PostToProto(p models.Post) *post_crud_pb.Post {
