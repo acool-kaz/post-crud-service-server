@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 
-	"github.com/acool-kaz/post-crud-service-server/internal/delivery/grpc/post/mapper"
 	"github.com/acool-kaz/post-crud-service-server/internal/models"
 	"github.com/acool-kaz/post-crud-service-server/internal/service"
 	post_crud_pb "github.com/acool-kaz/post-crud-service-server/pkg/post_crud/pb"
@@ -23,7 +22,7 @@ func InitPostCRUDHandler(service *service.Service) *PostCRUDHandler {
 }
 
 func (p *PostCRUDHandler) Create(ctx context.Context, req *post_crud_pb.CreateRequest) (*post_crud_pb.CreateResponse, error) {
-	post := mapper.ProtoToPost(req.Post)
+	post := models.ProtoToPost(req.Post)
 
 	if err := p.service.Post.Create(ctx, post); err != nil {
 		return &post_crud_pb.CreateResponse{Status: "failed"}, err
@@ -44,14 +43,14 @@ func (p *PostCRUDHandler) Read(ctx context.Context, req *post_crud_pb.ReadReques
 
 	protoPosts := []*post_crud_pb.Post{}
 	for _, p := range posts {
-		protoPosts = append(protoPosts, mapper.PostToProto(p))
+		protoPosts = append(protoPosts, models.PostToProto(p))
 	}
 
 	return &post_crud_pb.ReadResponse{Post: protoPosts}, nil
 }
 
 func (p *PostCRUDHandler) Update(ctx context.Context, req *post_crud_pb.UpdateRequest) (*post_crud_pb.UpdateResponse, error) {
-	update := mapper.FromUpdatePostProtoToUpdatePost(req)
+	update := models.FromUpdatePostProtoToUpdatePost(req)
 	id := int(req.GetId())
 
 	if err := p.service.Post.Update(ctx, id, update); err != nil {
